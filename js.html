@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+        let myString = 'I\'m a "fun ninja" string';
+        console.log(myString);
+        console.log(myString.indexOf("string"));  //On which place is word string
+        if(myString.indexOf("ninja") == -1){
+          console.log("The word ninja is not in the string");
+        }else {
+          console.log("The word ninja starts on the position", myString.indexOf("ninja"));
+        }
+        let str = "Hello World!";
+        let str2 = str.slice(2,9); //Slicing
+        console.log(str + " " +  str2);
+        let tags = "meat, milk, honey, salami, beef, chcicken";
+        console.log(tags);
+        let tagsArray = tags.split(","); // Making an array
+        console.log(tagsArray);
+
+        let myArray = [];
+        //myArray.lenght    Checking the lenght of an array
+        //myArray.sort()    Sorting an array
+        //myArray.reverse() Reversing an array
+
+        let arrays = [
+          ['Milk', 10],
+          ['Beef', 6],
+          ['Eggs', 8],
+          ['Pork chop', 12]
+        ];
+
+        console.log(arrays[2]);
+
+        //Objects
+
+        var myCar = new Object();
+        myCar.maxSpeed = 50;
+        myCar.driver = "Shaun";
+        myCar.drive = function(){
+          console.log("now driving");
+        };
+
+        console.log(myCar.driver);
+        myCar.drive();
+        let myCar2 = {
+          maxSpeed: 70,
+          driver: "Mariusz",
+          drive: function(){
+            console.log("The driver is", myCar2.driver);
+          }
+        }
+        myCar2.drive();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        let tab = ['Jarek', 'Darek', 'Wojtek'];
+        function Cars(_maxSpeed, _model, _price, _time){
+            this.maxSpeed = _maxSpeed;
+            this.model = _model;
+            this.price = _price;
+            this.time = _time;
+            this.payment = function(Price, Time){
+                  console.log("Your leasing is equal to ", +  Price/Time);
+            }
+        }
+
+        Car1 = new Cars(60, 'Audi', 12000, 3);
+        console.log(Car1.maxSpeed);
+        console.log(Car1.model);
+        console.log(Car1.price);
+        console.log(Car1.time);
+        console.log(Car1.payment(12000,3));
+
+        let Person = {};
+        Object.defineProperty(
+          Person,
+          'head', {
+            value: 1
+          }
+        );
+        const Personn = {   //Easier way to do higher example :)
+          head: 1, legs: 2
+        }
+        console.log(Personn.legs);
+    </script>
+  </head>
+  <body>
+    <p id="demo"></p>
+  </body>
+</html>

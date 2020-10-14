@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      console.log(this);
+      function Car(_MaxSpeed, _driver){
+        this.maxSpeed = _MaxSpeed;
+        this.driver = _driver;
+        this.drive = function(speed, time){
+          console.log(speed*time);
+        }
+      }
+      Car1 = new Car(70, 'Matthew');
+      car2 = new Car(170, 'Mariusz');
+      console.log(Car1.drive(20.0, 20));
+      console.log(Car1['maxSpeed']);
+      console.log(car2.maxSpeed);
+      let Person = {};
+      Object.defineProperty(
+        Person,
+        'head',
+        {
+          value: 1
+        }
+      );            //We can not delete it, cause of property, like a const
+      console.log(Person.head);
+      delete Person.head;
+      console.log(Person.head);
+      delete Car1.maxSpeed;
+      console.log(Car.maxSpeed);
+      console.log(Object.prototype.isPrototypeOf(Car));
+      console.log(Array.prototype.isPrototypeOf(Car));
+
+
+      //Comparing and creating Object birthday
+
+      let birthday = new Date(2001, 10, 3, 18, 49, 25);
+      console.log(birthday.getFullYear());
+      console.log(birthday.getMonth());
+      console.log(birthday.getDate());
+
+      var ninja = {
+        name: 'Ninja',
+        say: function(){
+          console.log("My name is", this.name);
+        }
+      }
+
+      ninja.say();
+
+      function F(){}
+      typeof F.prototype;
+
+      F.prototype = ninja;
+
+      let baby_ninja = new F();
+      baby_ninja.name = 'Matthew';
+      baby_ninja.say();
+
+      let o = Object.create(
+        ninja,
+        {
+          prop:{
+            value: 1
+          }
+        }
+      );
+      o.say();
+      console.log(o.prop);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
