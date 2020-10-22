@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+ class Person {
+   constructor(_name, _surname) {
+     this.name = _name;
+     this._surname = _surname;
+   }
+ }
+ var perso = new Person("Janek", "Palacz");
+ console.log(perso['name']);
+  var company = {
+    name: 'ACME Inc.',
+    employes: []
+  }
+  company.employes.push(perso);
+  console.log(company.employes[0]);
+
+  //Prototype
+
+  function Osoba(_name, _surname){
+    this.name = _name;
+    this.surname = _surname;
+  }
+  function Programmer(_knowLanguage){
+    this.knowLanguage = _knowLanguage;
+  }
+  Programmer.prototype = new Osoba();
+
+  var Prog = new Programmer();
+  console.log(Programmer);
+  console.log(Prog);
+
+let suum = (x,y,z) => console.log(x+y+z);
+suum(1,2,3);
+
+let alfred = new Osoba();
+alfred.name = "Alfred";
+alfred.surname = "Alfredowski";
+
+let WritteFullName = (p) => {
+  console.log(p.name + " " + p.surname);
+}
+WritteFullName(alfred);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
