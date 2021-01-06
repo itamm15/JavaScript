@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        w
+
+        let b = (x) =>{
+          console.log(x*x);
+        }
+        b(20);
+        function osoba(_imie, _nazwisko, _wiek, _wzrost){
+          this.imie = _imie;
+          this.nazwisko = _nazwisko;
+          this.wiek = _wiek;
+          this.wzrost = _wzrost;
+        }
+
+        osoba_1 = new osoba('Pawel', 'Kaczka', 18, 185);
+
+        let osoba_2 = {
+          imie: 'Daga',
+          nazwisko: 'Kazik',
+          wiek: 20,
+          getImie: function(){
+            return this.imie;
+          }
+        }
+        console.log(Object.keys(osoba_1));
+        console.log(Object.values(osoba_1));
+        console.log(Object.values(osoba_1));
+        console.log(osoba_1.wzrost);
+        console.log(osoba_2.getImie());
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

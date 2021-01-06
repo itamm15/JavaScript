@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      // function Bike(_napis, _marka, _skladniki){
+      //   this.napis = _napis;
+      //   this.marka = _marka;
+      //   this.skladniki = _skladniki;
+      //   data_produkcji :   function data_produkcji(_rok, _miesiac, _dzien){
+      //       this.rok = _rok;
+      //       this.miesiac = _miesiac;
+      //       this.dzien = _dzien;
+      //     }
+      // }
+      //
+      // let tab = new Array();
+      //
+      // let romek = new Bike('romet', 'romet', 'eeee');
+      // let tomek = new Bike('giant', 'cegla', 'fffff');
+      // let worek = new Bike('siamt', 'budka', 'ggggg');
+
+      function data_produkcji(_rok, _miesiac, _dzien){
+        this.rok = _rok;
+        this.miesiac = _miesiac;
+        this.dzien = _dzien;
+      }
+
+      let data1 = new data_produkcji(2010,10,3);
+      let data2 = new data_produkcji(2012,12,5);
+      let data3 = new data_produkcji(2014,2,7);
+
+
+      class Bike {
+        constructor(_napis, _marka, _skladniki, _data) {
+            this.napis = _napis;
+            this.marka = _marka;
+            this.skladniki = _skladniki;
+            this.data = _data;
+        }
+      }
+      let romek = new Bike('romet', 'romet', 'eeee', data1);
+      let tomek = new Bike('giant', 'cegla', 'fffff', data2);
+      let worek = new Bike('siamt', 'budka', 'ggggg', data3);
+      console.log(romek.data);
+      let tab = new Array();
+    </script>
+  </body>
+</html>

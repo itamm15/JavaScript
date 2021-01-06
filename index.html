@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: 'Matthew',
+            surname: 'Osinski'
+        };
+
+        user.isAdmin = true;
+        console.log(user.name + " " + user.surname + " " + user.isAdmin);
+
+        delete user.isAdmin; 
+
+
+        function makeUser(_name, _surname, _age){
+            return{
+                name: _name, // name,
+                surname: _surname, // surname
+                age: _age
+            }
+        }
+
+        let person = makeUser("John", "Bravo", 30);
+        //alert(person.name + " " + person.surname);
+        //alert( "age" in user);
+
+        for( key in person){
+            console.log(key + " " + person[key]);
+        }
+
+        let clone = {};
+
+        for( key in user){
+            clone[key] = user[key];
+        }
+
+        clone.name = "Dagmara";
+        clone.surname = "Kazmierska";
+
+        console.log(clone.name + " " + clone.surname);
+
+        let permissions1 = {
+            canView: true
+        }
+
+        Object.assign(user, {canView : true});
+
+        console.log(user.canView);
+
+
+        function marry(man, woman){
+            woman.husband = man;
+            man.wife = woman;
+            return{
+                father: man,
+                wife: woman
+            }
+        }
+
+        let family = marry({
+            name: "Johny"
+        },{
+            name: "Ann"
+        })
+
+        console.log("father" in family);
+        console.log(family.father.name);
+
+        //this
+
+
+
+        let user2 = {
+            name: "John",
+            age: 30,
+            aboutMe(){ 
+                console.log(this.name + " " + this.age);
+            }
+        }
+
+        user2.aboutMe();
+
+        let admin = user2;
+        admin.name = "Ryan";
+        admin.age = 56;
+        user2 = null;
+        admin.aboutMe();
+
+        function User(_name, _surname){
+            this.name = _name;
+            this.surname = _surname;
+            this.aboutMe = () => {
+                console.log(this.name + " " + this.surname);
+            }
+        }
+
+        let newUser = new User("Johny", "Osinski");
+
+        console.log(newUser.name + " " + newUser.surname);
+
+        newUser.aboutMe();
+
+        function User2(_name){
+            if(!new.target){
+                return new User2(_name);
+            }
+            this.name = _name;
+        }
+
+        let Johnny = User2("Johnny");
+        console.log(Johnny.name);
+
+
+        let Person2 = {
+            address: 'Miodowa'
+        }
+
+        console.log(Person2.address && Person2.address.street && Person2.address.street.number);
+        //
+        console.log(Person2?.address?.street?.number);
+    </script>
+</body>
+</html>
