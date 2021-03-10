@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 56px;
+        }
+        .clock{
+            left: 50%;
+            top: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="display" class="clock" onload="timerStart()">
+        <!--Some text-->
+    </div>
+
+    <script>
+        timerStart = () => {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            if(hours < 10){
+                hours = '0' + hours;
+            }else if(minutes < 10){
+                minutes = '0' + minutes;
+            }else if(seconds < 10){
+                seconds = '0' + seconds;
+            }
+
+            let currentDate = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById('display').innerText = currentDate;
+            setTimeout(timerStart);
+            if(hours < 18 || hours > 6){
+                document.body.style.backgroundImage = "url(sun-field.jpg)";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
+            }else{
+                document.body.style.color =  "rgb(40,44,53)";
+            }
+        }
+
+
+        timerStart();
+    </script>
+</body>
+</html>
