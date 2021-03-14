@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery basics</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .first{
+            width: 100%;
+            background-color: aqua;
+            padding: 10px;
+        }
+        .second{
+            width: 100%;
+            background-color:blanchedalmond;
+            padding: 10px;
+        }
+        .third{
+            width: 100%;
+            padding: 10px;
+            background-color: blueviolet;
+        }
+        .fourth{
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(() => {
+            $('#hide').click(() => {
+                $('p:first').hide();
+            })
+            $('#show').click(() => {
+                $('p:first').show();
+            })
+        });
+    </script>
+    <div class="first">
+        <p>Hello there!</p>
+        <button id="hide">Click me, and see what happens!</button>
+        <button id="show">Click me, and see what happens right now!</button>
+    </div>
+    <script>
+        $(()=>{
+            $('#do_not_leave').hover(()=>{
+                alert("Good to see you back!");
+        },
+            () => {
+                alert("I told you not to leave.");
+            }
+        )
+        });
+    </script>
+    <div class="second">
+        <p style="width: 20%;height:25px;display:block;" id="do_not_leave">Do not leave this area!</p>
+    </div>
+    <!--EVENT -an event represent the precise moment, when something happens-->
+    <!--
+        mouse events - click, dbclick, mouseenter, mouseleave 
+        keyboard events - keypress, keydown, keyup
+        form events and document.window events
+    -->
+
+    <script>
+        $(()=>{
+            $(".btn").click(() => {
+                $('.third').css('background-color', "pink");
+            });
+            $('.third').hover(() => {
+                $(event.currentTarget).css('background-color', 'blueviolet');
+            })
+        })
+
+        //this element behaves different in arrow function and normal function
+        //in arrow function we need to use event.currentTarger
+        //in normal function declaration we need to use this or this.element
+    </script>
+    <div class="third">
+        <button class="btn">Just click me and see the real magic;)</button>
+    </div>
+    <script>
+        $(() => {
+            $('.fourth').click(() => {
+                $(event.currentTarget).css('background-color', 'red');
+            });
+            $('.fourth').hover(()=>{
+                $(event.currentTarget).css('background-color', 'pink');
+            });
+            $('.fourth').mouseover(() =>{
+                $(event.currentTarget).css('font-size', 25);
+            });
+            $('.fourth').mouseout(()=>{
+                $(event.currentTarget).css('font-size', 16);
+            })
+        })
+    </script>
+    <div class="fourth">
+        <p>Try to find every combination of jquery's properties!</p>
+    </div>
+    <!--https://www.w3schools.com/jquery/jquery_hide_show.asp-->
+</body>
+</html>
